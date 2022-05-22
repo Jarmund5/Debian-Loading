@@ -92,7 +92,7 @@ Rectangle {
             }
         }
         Row {
-            opacity: 0.5
+            opacity: 1.0
             spacing: units.smallSpacing*2
             anchors {
                 bottom: parent.bottom
@@ -101,12 +101,12 @@ Rectangle {
             }
             anchors.horizontalCenter: parent.horizontalCenter
             Text {
-                color: "#eff0f1"
+                color: "#7d3dbd"
                 // Work around Qt bug where NativeRendering breaks for non-integer scale factors
                 // https://bugreports.qt.io/browse/QTBUG-67007
                 renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
                 anchors.verticalCenter: parent.verticalCenter
-                text: "Welcome to Plasma"
+                text: "Welcome to EndeavourOS KDE Plasma"
             }
             Image {
                 source: "images/kde.svgz"

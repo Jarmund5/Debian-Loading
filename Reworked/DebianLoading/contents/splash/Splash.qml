@@ -51,7 +51,7 @@ Rectangle {
 
         Rectangle {
 
-        property int sizeAnim: 400
+        property int sizeAnim: 125
 
         id: imageSource
         width:  sizeAnim
@@ -61,15 +61,13 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         clip: true;
  
-        AnimatedImage { 
+        Image { 
             id: face
-            source: "images/plasma_d.gif"
-            paused: false 
+            source: "images/debian-logo-transparent-white.png"             
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            width:  imageSource.sizeAnim - 7
-            height: imageSource.sizeAnim  - 7
-            smooth: true
+            anchors.fill: parent
+            mipmap: true
             visible: true 
          }
     }
@@ -81,13 +79,13 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.margins: units.gridUnit
             source: "images/busywidget.svgz"
-            sourceSize.height: units.gridUnit * 2
-            sourceSize.width: units.gridUnit * 2
+            sourceSize.height: units.gridUnit * 3
+            sourceSize.width: units.gridUnit * 3
             RotationAnimator on rotation {
                 id: rotationAnimator
                 from: 0
                 to: 360
-                duration: 1500
+                duration: 1000
                 loops: Animation.Infinite
             }
         }
@@ -101,18 +99,14 @@ Rectangle {
             }
             anchors.horizontalCenter: parent.horizontalCenter
             Text {
-                color: "#7d3dbd"
+                color: "#ffffff"
                 // Work around Qt bug where NativeRendering breaks for non-integer scale factors
                 // https://bugreports.qt.io/browse/QTBUG-67007
                 renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
                 anchors.verticalCenter: parent.verticalCenter
-                text: "Welcome to EndeavourOS KDE Plasma"
+                text: "Welcome to Debian"
             }
-            Image {
-                source: "images/kde.svgz"
-                sourceSize.height: units.gridUnit * 2
-                sourceSize.width: units.gridUnit * 2
-            }
+            
         }
     }
 
@@ -122,7 +116,7 @@ Rectangle {
         target: content
         from: 0
         to: 1
-        duration: 1000
+        duration: 2500
         easing.type: Easing.InOutQuad
     }
 }
